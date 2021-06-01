@@ -21,7 +21,7 @@ public class UsuariosDAOTest {
     public void atualizar() {
         
         UsuariosDAO dao = new UsuariosDAO();
-        String valor = "3333";
+        String valor = "5555";
         String conta = "555555";
         
         if(dao.updateSaldo(valor, conta)){
