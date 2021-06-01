@@ -42,4 +42,25 @@ public class UsuariosDAO {
         return check;
     }
     
+        public boolean updateSaldo(String valor, String conta){
+        
+        Connection con = ConnectionFactory.getConnection();
+        String sql = "UPDATE usuarios SET saldoPoup = ? WHERE numconta = ? LIMIT 1";
+        PreparedStatement stmt = null;        
+        
+        try {
+            stmt = con.prepareStatement(sql);
+            stmt.setString(1, valor);
+            stmt.setString(2, conta);
+            stmt.executeUpdate();
+            return true;
+  
+        } catch (SQLException ex) {
+            System.err.println("Erro: " + ex);
+            return false;
+        } finally {
+            ConnectionFactory.closeConnection(con, stmt);                    
+        }             
+    }
+    
 }
