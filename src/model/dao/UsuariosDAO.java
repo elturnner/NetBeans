@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.bean.Usuarios;
 
 /**
  *
@@ -41,16 +42,64 @@ public class UsuariosDAO {
         
         return check;
     }
-    
-        public boolean updateSaldo(String valor, String conta){
+    public boolean checkNumConta(String numConta){
         
         Connection con = ConnectionFactory.getConnection();
-        String sql = "UPDATE usuarios SET saldoPoup = ? WHERE numconta = ? LIMIT 1";
-        PreparedStatement stmt = null;        
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        boolean check = false;
         
         try {
+            stmt = con.prepareStatement("SELECT * FROM usuarios WHERE numconta = ?");
+            stmt.setString(1, numConta);           
+            
+            rs = stmt.executeQuery();
+            
+            if (rs.next()) {
+                
+                check = true;
+                
+            }
+        } catch (SQLException ex) {
+            System.err.println("Erro: " + ex);
+        } finally {
+            ConnectionFactory.closeConnection(con, stmt, rs);                    
+        }
+        
+        return check;
+    }
+    
+        public boolean retiraSaldo(String valor, String conta){
+        
+        Connection con = ConnectionFactory.getConnection();
+        ResultSet rs = null;        
+        String sql = "UPDATE usuarios SET saldoPoup = ? WHERE numconta = ? LIMIT 1";
+        String sql2 = "SELECT * FROM usuarios WHERE numconta = ?";
+        double saldo = 0;
+        double saldoAtualizado = 0;
+
+        PreparedStatement stmt = null;
+
+        try {
+            stmt = con.prepareStatement(sql2);
+            stmt.setString(1, conta);
+            rs = stmt.executeQuery();
+            
+            if(rs != null && rs.next()){
+                saldo = rs.getDouble("saldoPoup");
+            }
+                       
+            saldoAtualizado = saldo - Double.parseDouble(valor);           
+  
+        } catch (SQLException ex) {
+            System.err.println("Erro: " + ex);            
+        }
+                 
+        //saldoFinal = String.valueOf(saldoAtualizado);
+
+        try {
             stmt = con.prepareStatement(sql);
-            stmt.setString(1, valor);
+            stmt.setString(1, String.valueOf(saldoAtualizado));
             stmt.setString(2, conta);
             stmt.executeUpdate();
             return true;
@@ -59,7 +108,50 @@ public class UsuariosDAO {
             System.err.println("Erro: " + ex);
             return false;
         } finally {
-            ConnectionFactory.closeConnection(con, stmt);                    
+            ConnectionFactory.closeConnection(con, stmt, rs);                    
+        }             
+    }
+        
+        public boolean addSaldo(String valor, String conta){
+        
+        Connection con = ConnectionFactory.getConnection();
+        ResultSet rs = null;        
+        String sql = "UPDATE usuarios SET saldoPoup = ? WHERE numconta = ? LIMIT 1";
+        String sql2 = "SELECT * FROM usuarios WHERE numconta = ?";
+        double saldo = 0;
+        double saldoAtualizado = 0;
+
+        PreparedStatement stmt = null;
+
+        try {
+            stmt = con.prepareStatement(sql2);
+            stmt.setString(1, conta);
+            rs = stmt.executeQuery();
+            
+            if(rs != null && rs.next()){
+                saldo = rs.getDouble("saldoPoup");
+            }
+                       
+            saldoAtualizado = saldo + Double.parseDouble(valor);           
+  
+        } catch (SQLException ex) {
+            System.err.println("Erro: " + ex);            
+        }
+                 
+        //saldoFinal = String.valueOf(saldoAtualizado);
+
+        try {
+            stmt = con.prepareStatement(sql);
+            stmt.setString(1, String.valueOf(saldoAtualizado));
+            stmt.setString(2, conta);
+            stmt.executeUpdate();
+            return true;
+  
+        } catch (SQLException ex) {
+            System.err.println("Erro: " + ex);
+            return false;
+        } finally {
+            ConnectionFactory.closeConnection(con, stmt, rs);                    
         }             
     }
     
