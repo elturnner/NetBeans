@@ -69,14 +69,20 @@ public class UsuariosDAO {
         return check;
     }
     
-        public boolean retiraSaldo(String valor, String conta){
+        public boolean retiraSaldo(String valor, String conta, String tipoConta){
         
         Connection con = ConnectionFactory.getConnection();
         ResultSet rs = null;        
         String sql = "UPDATE usuarios SET saldoPoup = ? WHERE numconta = ? LIMIT 1";
         String sql2 = "SELECT * FROM usuarios WHERE numconta = ?";
+        String aux = "saldoPoup";
         double saldo = 0;
         double saldoAtualizado = 0;
+        
+        if(tipoConta.equals("Conta Corrente")){
+            sql = "UPDATE usuarios SET saldoCor = ? WHERE numconta = ? LIMIT 1";
+            aux = "saldoCor";
+        }
 
         PreparedStatement stmt = null;
 
@@ -86,7 +92,7 @@ public class UsuariosDAO {
             rs = stmt.executeQuery();
             
             if(rs != null && rs.next()){
-                saldo = rs.getDouble("saldoPoup");
+                saldo = rs.getDouble(aux);
             }
                        
             saldoAtualizado = saldo - Double.parseDouble(valor);           
