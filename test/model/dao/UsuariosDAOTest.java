@@ -17,14 +17,15 @@ public class UsuariosDAOTest {
     public UsuariosDAOTest() {
     }
 
-    //@Test
+    @Test
     public void subtraiSaldo() {
         
         UsuariosDAO dao = new UsuariosDAO();
         String valor = "50";
         String conta = "555555";
+        String tipoConta = "Conta Corrente";
         
-        if(dao.retiraSaldo(valor, conta)){
+        if(dao.retiraSaldo(valor, conta, tipoConta)){
             System.out.println("Saldo atualizado com sucesso!");
         }else{
             fail("Erro ao Salvar");
@@ -32,7 +33,7 @@ public class UsuariosDAOTest {
         
     }
     
-    @Test
+    //@Test
     public void adicionaSaldo() {
         
         UsuariosDAO dao = new UsuariosDAO();
