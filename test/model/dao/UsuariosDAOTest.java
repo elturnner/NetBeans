@@ -17,19 +17,33 @@ public class UsuariosDAOTest {
     public UsuariosDAOTest() {
     }
 
-    @Test
-    public void atualizar() {
+    //@Test
+    public void subtraiSaldo() {
         
         UsuariosDAO dao = new UsuariosDAO();
-        String valor = "5555";
+        String valor = "50";
         String conta = "555555";
         
-        if(dao.updateSaldo(valor, conta)){
+        if(dao.retiraSaldo(valor, conta)){
             System.out.println("Saldo atualizado com sucesso!");
         }else{
             fail("Erro ao Salvar");
-        }
+        }        
         
+    }
+    
+    @Test
+    public void adicionaSaldo() {
+        
+        UsuariosDAO dao = new UsuariosDAO();
+        String valor = "100";
+        String conta = "555555";
+        
+        if(dao.addSaldo(valor, conta)){
+            System.out.println("Saldo atualizado com sucesso!");
+        }else{
+            fail("Erro ao Salvar");
+        }        
         
     }
     
