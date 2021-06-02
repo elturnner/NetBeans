@@ -13,7 +13,8 @@ public class Usuarios {
     
     private int id;
     private String login;
-    private String senha;
+    private String senha;    
+            
 
     public int getId() {
         return id;
