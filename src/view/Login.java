@@ -133,6 +133,10 @@ public class Login extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
 
+        if(txtSenha.getText().equals("") || txtUsername.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Preencha os campos.");
+            return;
+        }
         
         UsuariosDAO dao = new UsuariosDAO();      
         
@@ -142,7 +146,7 @@ public class Login extends javax.swing.JFrame {
             new Home().setVisible(true);
             this.dispose();
         } else {
-            JOptionPane.showMessageDialog(null, "Senha incorreta!");
+            JOptionPane.showMessageDialog(null, "Senha ou Usuário inválidos!");
         }
         
     }//GEN-LAST:event_btnLoginActionPerformed
