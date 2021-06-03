@@ -67,8 +67,8 @@ public class UsuariosDAOTest {
         
         UsuariosDAO dao = new UsuariosDAO();
         String valor = "100";
-        String conta = "555555";
-        String tipoConta = "Conta Poupança";
+        String conta = "111111";
+        String tipoConta = "Conta Corrente";
         
         if(dao.addSaldo(valor, conta, tipoConta)){
             System.out.println("Saldo atualizado com sucesso!");
