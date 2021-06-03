@@ -44,7 +44,7 @@ public class Transferencia extends javax.swing.JFrame {
         spnTipodeContaRem = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Transferência");
+        setTitle("AutoBank - Transferência");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Nº da Conta de Destino:");
@@ -54,6 +54,7 @@ public class Transferencia extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton1.setText("Confirmar");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -62,6 +63,12 @@ public class Transferencia extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton2.setText("Cancelar");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         txtNumContaDestino.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         txtNumContaDestino.addActionListener(new java.awt.event.ActionListener() {
@@ -174,23 +181,40 @@ public class Transferencia extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        UsuariosDAO dao = new UsuariosDAO();      
-        
-        
-        if(dao.checkNumConta(txtNumContaDestino.getText())) { 
-            dao.retiraSaldo(txtValor.getText(), txtNumContaRem.getText(), String.valueOf(spnTipodeContaRem.getValue()));
-            dao.addSaldo(txtValor.getText(), txtNumContaDestino.getText());
-            new Home().setVisible(true);
-            this.dispose();
-        } else {
-            JOptionPane.showMessageDialog(null, "Valor Indisponível ou Número da Conta inválido!");
+        if(txtValor.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Por favor, preencha todos os caompos.");
+            return;
         }
+        
+        UsuariosDAO dao = new UsuariosDAO();
+                        
+        if(dao.checkSaldo(txtValor.getText(), txtNumContaRem.getText())){
+            
+            if(dao.checkNumConta(txtNumContaDestino.getText(), txtNumContaRem.getText())) { 
+                dao.retiraSaldo(txtValor.getText(), txtNumContaRem.getText(), "");
+                dao.addSaldo(txtValor.getText(), txtNumContaDestino.getText(), txtNumContaDestino.getText());
+                new Home().setVisible(true);
+                this.dispose();
+            
+            } else {
+                JOptionPane.showMessageDialog(null, "Verifique se os Dados foram digitados corretamente.");
+            }            
+        }else {
+                JOptionPane.showMessageDialog(null, "Saldo Insuficiente!");
+            }
+        
+        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtNumContaRemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumContaRemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumContaRemActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new Home().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
