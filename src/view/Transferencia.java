@@ -96,7 +96,7 @@ public class Transferencia extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel4.setText("Tipo de conta:");
+        jLabel4.setText("Depositar em:");
 
         spnTipodeContaRem.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         spnTipodeContaRem.setModel(new javax.swing.SpinnerListModel(new String[] {"Conta Corrente", "Conta Poupança"}));
