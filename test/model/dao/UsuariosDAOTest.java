@@ -47,7 +47,7 @@ public class UsuariosDAOTest {
         }        
         
     }
-    @Test
+    //@Test
     public void checaContas() {
         
         UsuariosDAO dao = new UsuariosDAO();
@@ -62,14 +62,15 @@ public class UsuariosDAOTest {
         
     }
     
-    //@Test
+    @Test
     public void adicionaSaldo() {
         
         UsuariosDAO dao = new UsuariosDAO();
         String valor = "100";
         String conta = "555555";
+        String tipoConta = "Conta Poupança";
         
-        if(dao.addSaldo(valor, conta)){
+        if(dao.addSaldo(valor, conta, tipoConta)){
             System.out.println("Saldo atualizado com sucesso!");
         }else{
             fail("Erro ao Salvar");
