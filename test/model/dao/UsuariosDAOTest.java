@@ -33,17 +33,31 @@ public class UsuariosDAOTest {
         
     }
     
-    @Test
+    //@Test
     public void checaSaldo() {
         
         UsuariosDAO dao = new UsuariosDAO();
-        String valor = "50000";
-        String conta = "555555";
+        String valor = "5000";
+        String conta = "555555";;
         
         if(dao.checkSaldo(valor, conta)){
             System.out.println("Você tem saldo Suficiente!");
         }else{
             System.out.println("Você não possui Saldo Suficiente!");
+        }        
+        
+    }
+    @Test
+    public void checaContas() {
+        
+        UsuariosDAO dao = new UsuariosDAO();
+        String contaDest = "999999";
+        String contaRem = "555555";
+        
+        if(dao.checkNumConta(contaDest, contaRem)){
+            System.out.println("As duas Contas Existem!");
+        }else{
+            System.out.println("Uma das contas n existem!");
         }        
         
     }
