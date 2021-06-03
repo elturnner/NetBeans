@@ -17,7 +17,7 @@ public class UsuariosDAOTest {
     public UsuariosDAOTest() {
     }
 
-    @Test
+    //@Test
     public void subtraiSaldo() {
         
         UsuariosDAO dao = new UsuariosDAO();
@@ -29,6 +29,21 @@ public class UsuariosDAOTest {
             System.out.println("Saldo atualizado com sucesso!");
         }else{
             fail("Erro ao Salvar");
+        }        
+        
+    }
+    
+    @Test
+    public void checaSaldo() {
+        
+        UsuariosDAO dao = new UsuariosDAO();
+        String valor = "50000";
+        String conta = "555555";
+        
+        if(dao.checkSaldo(valor, conta)){
+            System.out.println("Você tem saldo Suficiente!");
+        }else{
+            System.out.println("Você não possui Saldo Suficiente!");
         }        
         
     }
