@@ -158,6 +158,8 @@ public class UsuariosDAO {
             ConnectionFactory.closeConnection(con, stmt, rs);                    
         }             
     }
+        
+        
         public boolean checkSaldo(String valor, String conta){
         
         Connection con = ConnectionFactory.getConnection();
