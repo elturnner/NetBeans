@@ -143,8 +143,6 @@ public class UsuariosDAO {
         } catch (SQLException ex) {
             System.err.println("Erro: " + ex);            
         }
-                 
-        //saldoFinal = String.valueOf(saldoAtualizado);
 
         try {
             stmt = con.prepareStatement(sql);
@@ -152,6 +150,35 @@ public class UsuariosDAO {
             stmt.setString(2, conta);
             stmt.executeUpdate();
             return true;
+  
+        } catch (SQLException ex) {
+            System.err.println("Erro: " + ex);
+            return false;
+        } finally {
+            ConnectionFactory.closeConnection(con, stmt, rs);                    
+        }             
+    }
+        public boolean checkSaldo(String valor, String conta){
+        
+        Connection con = ConnectionFactory.getConnection();
+        ResultSet rs = null;
+        String sql2 = "SELECT * FROM usuarios WHERE numconta = ?";
+        double saldo = 0;
+        PreparedStatement stmt = null;
+
+        try {
+            stmt = con.prepareStatement(sql2);
+            stmt.setString(1, conta);
+            rs = stmt.executeQuery();
+            
+            if(rs != null && rs.next()){
+                saldo = rs.getDouble("saldoPoup");
+            }
+            if(saldo < Double.parseDouble(valor)){
+                return false;
+            }else{
+                return true;
+            }                       
   
         } catch (SQLException ex) {
             System.err.println("Erro: " + ex);
