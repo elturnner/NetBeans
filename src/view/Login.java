@@ -5,6 +5,7 @@
  */
 package view;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import model.dao.UsuariosDAO;
 
@@ -54,6 +55,11 @@ public class Login extends javax.swing.JFrame {
         });
 
         txtSenha.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSenhaKeyPressed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setText("Senha:");
@@ -157,6 +163,23 @@ public class Login extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
+
+        UsuariosDAO dao = new UsuariosDAO(); 
+        
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            if(dao.checkLogin(txtUsername.getText(), txtSenha.getText())) {
+            
+                new Home().setVisible(true);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Senha ou Usuário inválidos!");
+            }
+            
+        }        
+        
+    }//GEN-LAST:event_txtSenhaKeyPressed
 
     /**
      * @param args the command line arguments
