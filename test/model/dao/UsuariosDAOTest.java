@@ -17,12 +17,12 @@ public class UsuariosDAOTest {
     public UsuariosDAOTest() {
     }
 
-    //@Test
+    @Test
     public void subtraiSaldo() {
         
         UsuariosDAO dao = new UsuariosDAO();
         String valor = "50";
-        String conta = "555555";
+        String conta = "999";
         String tipoConta = "Conta Corrente";
         
         if(dao.retiraSaldo(valor, conta, tipoConta)){
@@ -62,7 +62,7 @@ public class UsuariosDAOTest {
         
     }
     
-    @Test
+    //@Test
     public void adicionaSaldo() {
         
         UsuariosDAO dao = new UsuariosDAO();
