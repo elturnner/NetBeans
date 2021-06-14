@@ -21,8 +21,8 @@ public class UsuariosDAOTest {
     public void subtraiSaldo() {
         
         UsuariosDAO dao = new UsuariosDAO();
-        String valor = "50";
-        String conta = "999";
+        String valor = "2000";
+        String conta = "2200";
         String tipoConta = "Conta Corrente";
         
         if(dao.retiraSaldo(valor, conta, tipoConta)){
