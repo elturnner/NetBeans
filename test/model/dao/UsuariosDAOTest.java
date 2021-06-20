@@ -38,7 +38,7 @@ public class UsuariosDAOTest {
         
         UsuariosDAO dao = new UsuariosDAO();
         String valor = "5000";
-        String conta = "555555";;
+        String conta = "555555";
         
         if(dao.checkSaldo(valor, conta)){
             System.out.println("Você tem saldo Suficiente!");
