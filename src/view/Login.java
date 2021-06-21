@@ -24,6 +24,10 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         lblLogo.setHorizontalAlignment(SwingConstants.CENTER);
+        
+        Color lblBotao = new Color(36, 135, 174);        
+        btnLogin.setBackground(lblBotao);
+        
         Color lbl = new Color(36, 135, 174);
         lblUsuario.setOpaque(true);
         lblUsuario.setBackground(lbl);
@@ -81,6 +85,7 @@ public class Login extends javax.swing.JFrame {
         lblSenha.setText(" Senha:");
 
         btnLogin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Confirmar");
         btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLogin.addActionListener(new java.awt.event.ActionListener() {

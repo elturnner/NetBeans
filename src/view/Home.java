@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.Color;
+
  
 public class Home extends javax.swing.JFrame {
 
@@ -9,6 +11,18 @@ public class Home extends javax.swing.JFrame {
     public Home() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        Color lblBotao = new Color(9, 24, 31);
+        btnSair.setBackground(lblBotao);
+        
+        Color lbl = new Color(36, 135, 174);        
+        btnTransferencia.setBackground(lbl);
+        btnConsultaSaldo.setBackground(lbl);
+        btnPagamento.setBackground(lbl);
+        btnRalizaDeposito.setBackground(lbl);
+        btnRealizaSaque.setBackground(lbl);
+        
+        
     }
 
     /**
@@ -25,7 +39,7 @@ public class Home extends javax.swing.JFrame {
         btnTransferencia = new javax.swing.JButton();
         btnRealizaSaque = new javax.swing.JButton();
         btnPagamento = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
         btnRalizaDeposito = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lblLogo = new javax.swing.JLabel();
@@ -36,6 +50,7 @@ public class Home extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(197, 225, 236));
 
         btnConsultaSaldo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnConsultaSaldo.setForeground(new java.awt.Color(255, 255, 255));
         btnConsultaSaldo.setText("Consultar Saldo");
         btnConsultaSaldo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConsultaSaldo.addActionListener(new java.awt.event.ActionListener() {
@@ -45,6 +60,7 @@ public class Home extends javax.swing.JFrame {
         });
 
         btnTransferencia.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnTransferencia.setForeground(new java.awt.Color(255, 255, 255));
         btnTransferencia.setText("Realizar Transferência");
         btnTransferencia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnTransferencia.addActionListener(new java.awt.event.ActionListener() {
@@ -54,6 +70,7 @@ public class Home extends javax.swing.JFrame {
         });
 
         btnRealizaSaque.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnRealizaSaque.setForeground(new java.awt.Color(255, 255, 255));
         btnRealizaSaque.setText("Realizar Saque");
         btnRealizaSaque.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRealizaSaque.addActionListener(new java.awt.event.ActionListener() {
@@ -63,20 +80,29 @@ public class Home extends javax.swing.JFrame {
         });
 
         btnPagamento.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnPagamento.setForeground(new java.awt.Color(255, 255, 255));
         btnPagamento.setText("Fazer Pagamento");
         btnPagamento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setText("Sair");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnPagamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnPagamentoActionPerformed(evt);
+            }
+        });
+
+        btnSair.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSair.setForeground(new java.awt.Color(255, 255, 255));
+        btnSair.setText("Sair");
+        btnSair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
             }
         });
 
         btnRalizaDeposito.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnRalizaDeposito.setForeground(new java.awt.Color(255, 255, 255));
         btnRalizaDeposito.setText("Realizar Depósito");
+        btnRalizaDeposito.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRalizaDeposito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRalizaDepositoActionPerformed(evt);
@@ -105,40 +131,44 @@ public class Home extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(49, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnConsultaSaldo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(btnRalizaDeposito, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
-                                .addComponent(btnRealizaSaque, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(41, 41, 41)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnTransferencia))))
-                .addGap(42, 42, 42))
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(49, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnRalizaDeposito, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(btnRealizaSaque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGap(41, 41, 41)
+                                    .addComponent(btnTransferencia))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(btnConsultaSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                                    .addComponent(btnPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(42, 42, 42))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnConsultaSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnTransferencia)
-                    .addComponent(btnConsultaSaldo))
-                .addGap(45, 45, 45)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRealizaSaque)
-                    .addComponent(btnPagamento))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addComponent(btnRalizaDeposito)
-                .addGap(65, 65, 65)
-                .addComponent(jButton2)
-                .addGap(33, 33, 33))
+                    .addComponent(btnRealizaSaque, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTransferencia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addComponent(btnRalizaDeposito, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(btnSair)
+                .addGap(46, 46, 46))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -160,9 +190,10 @@ public class Home extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnTransferenciaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        new Login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnConsultaSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaSaldoActionPerformed
         //Chamada a tela consulta saldo...
@@ -182,6 +213,10 @@ public class Home extends javax.swing.JFrame {
         TelaDeposito td = new TelaDeposito();
         td.setVisible(true);
     }//GEN-LAST:event_btnRalizaDepositoActionPerformed
+
+    private void btnPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagamentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPagamentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,8 +258,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton btnPagamento;
     private javax.swing.JButton btnRalizaDeposito;
     private javax.swing.JButton btnRealizaSaque;
+    private javax.swing.JButton btnSair;
     private javax.swing.JButton btnTransferencia;
-    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblLogo;

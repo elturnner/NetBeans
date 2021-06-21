@@ -18,6 +18,9 @@ public class TelaSaque extends javax.swing.JFrame {
         
         this.setLocationRelativeTo(null);
         
+        Color lblBotao = new Color(36, 135, 174);        
+        jButton1.setBackground(lblBotao);
+        
         lblLogo.setHorizontalAlignment(SwingConstants.CENTER);
         Color lbl = new Color(36, 135, 174);
         lblContaR.setOpaque(true);
@@ -91,6 +94,7 @@ public class TelaSaque extends javax.swing.JFrame {
         setResizable(false);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Confirmar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

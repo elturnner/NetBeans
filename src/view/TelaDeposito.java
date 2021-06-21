@@ -16,6 +16,9 @@ public class TelaDeposito extends javax.swing.JFrame {
         con = ConnectionFactory.getConnection();
         this.setLocationRelativeTo(null);
         
+        Color lblBotao = new Color(36, 135, 174);        
+        btnConfirmar.setBackground(lblBotao);
+        
         lblLogo.setHorizontalAlignment(SwingConstants.CENTER);
         Color lbl = new Color(36, 135, 174);
         lblDeposito.setOpaque(true);
@@ -110,6 +113,7 @@ public class TelaDeposito extends javax.swing.JFrame {
         cboTipoConta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Conta Poupança", "Conta Corrente" }));
 
         btnConfirmar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnConfirmar.setForeground(new java.awt.Color(255, 255, 255));
         btnConfirmar.setText("Confirmar");
         btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

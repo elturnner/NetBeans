@@ -29,6 +29,9 @@ public class ConsulSaldo extends javax.swing.JFrame {
         lblSaldoC.setBackground(lbl);
         lblSaldoP.setOpaque(true);
         lblSaldoP.setBackground(lbl);
+        
+        Color lblBotao = new Color(9, 24, 31);        
+        jButton1.setBackground(lbl);
     }
 
     private void consultarSaldo() {
@@ -77,6 +80,7 @@ public class ConsulSaldo extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(197, 225, 236));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Consultar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,9 +151,8 @@ public class ConsulSaldo extends javax.swing.JFrame {
                     .addComponent(lblConta)
                     .addComponent(lblCli)
                     .addComponent(lblCliente)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblSaldoC)
-                        .addComponent(lblSaldoP)))
+                    .addComponent(lblSaldoP)
+                    .addComponent(lblSaldoC))
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(txtSaldoPoup)

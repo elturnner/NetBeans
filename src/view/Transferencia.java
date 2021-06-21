@@ -20,8 +20,13 @@ public class Transferencia extends javax.swing.JFrame {
     /** Creates new form Transferencia */
     public Transferencia() {
         initComponents();
-        this.setLocationRelativeTo(null); 
+        this.setLocationRelativeTo(null);
+        
         lblLogo.setHorizontalAlignment(SwingConstants.CENTER);
+        
+        Color lblBotao = new Color(9, 24, 31);
+        btnVoltar.setBackground(lblBotao);
+
         Color lbl = new Color(36, 135, 174);
         lblDep.setOpaque(true);
         lblDep.setBackground(lbl);
@@ -31,6 +36,8 @@ public class Transferencia extends javax.swing.JFrame {
         lblNconta.setBackground(lbl);
         lblValor.setOpaque(true);
         lblValor.setBackground(lbl);
+        btnConfirmar.setBackground(lbl);
+        btnCancelar.setBackground(lbl);
     }
 
     /** This method is called from within the constructor to
@@ -46,15 +53,15 @@ public class Transferencia extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lblNContaDest = new javax.swing.JLabel();
         lblValor = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnConfirmar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         txtNumContaDestino = new javax.swing.JTextField();
         txtValor = new javax.swing.JTextField();
         lblNconta = new javax.swing.JLabel();
         txtNumContaRem = new javax.swing.JTextField();
         lblDep = new javax.swing.JLabel();
         spnTipodeContaRem = new javax.swing.JSpinner();
-        jButton3 = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lblLogo = new javax.swing.JLabel();
 
@@ -71,21 +78,23 @@ public class Transferencia extends javax.swing.JFrame {
         lblValor.setForeground(new java.awt.Color(255, 255, 255));
         lblValor.setText(" Valor: ");
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton1.setText("Confirmar");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnConfirmar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnConfirmar.setForeground(new java.awt.Color(255, 255, 255));
+        btnConfirmar.setText("Confirmar");
+        btnConfirmar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnConfirmarActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton2.setText("Cancelar");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnCancelar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancelar.setText("Cancelar");
+        btnCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnCancelarActionPerformed(evt);
             }
         });
 
@@ -121,12 +130,13 @@ public class Transferencia extends javax.swing.JFrame {
         spnTipodeContaRem.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         spnTipodeContaRem.setModel(new javax.swing.SpinnerListModel(new String[] {"Conta Corrente", "Conta Poupança"}));
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton3.setText("Voltar");
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnVoltar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnVoltar.setForeground(new java.awt.Color(255, 255, 255));
+        btnVoltar.setText("Voltar");
+        btnVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnVoltarActionPerformed(evt);
             }
         });
 
@@ -154,7 +164,7 @@ public class Transferencia extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addComponent(btnVoltar)
                 .addGap(24, 24, 24))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -164,7 +174,7 @@ public class Transferencia extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblNContaDest, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(btnConfirmar)
                                 .addGap(13, 13, 13))
                             .addComponent(lblDep, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblValor, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -177,7 +187,7 @@ public class Transferencia extends javax.swing.JFrame {
                                     .addComponent(spnTipodeContaRem, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(107, 107, 107)
-                                .addComponent(jButton2))))
+                                .addComponent(btnCancelar))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(lblNconta)
                         .addGap(18, 18, 18)
@@ -206,10 +216,10 @@ public class Transferencia extends javax.swing.JFrame {
                     .addComponent(lblValor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnConfirmar)
+                    .addComponent(btnCancelar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
+                .addComponent(btnVoltar)
                 .addContainerGap())
         );
 
@@ -235,7 +245,7 @@ public class Transferencia extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtValorActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
         
         if(txtValor.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos.");
@@ -261,21 +271,21 @@ public class Transferencia extends javax.swing.JFrame {
         
         
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnConfirmarActionPerformed
 
     private void txtNumContaRemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumContaRemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumContaRemActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         new Home().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         new Home().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -313,10 +323,10 @@ public class Transferencia extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnConfirmar;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblDep;
