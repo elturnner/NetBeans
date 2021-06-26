@@ -65,7 +65,7 @@ public class Transferencia extends javax.swing.JFrame {
         lblLogo = new javax.swing.JLabel();
         jcbConta = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("AutoBank - Transferência");
 
         jPanel1.setBackground(new java.awt.Color(197, 225, 236));
@@ -279,13 +279,15 @@ public class Transferencia extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNumContaRemActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        new Home().setVisible(true);
+        
         this.dispose();
+        
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        new Home().setVisible(true);
+        
         this.dispose();
+        
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     /**

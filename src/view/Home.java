@@ -188,7 +188,7 @@ public class Home extends javax.swing.JFrame {
     private void btnTransferenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransferenciaActionPerformed
         
         new Transferencia().setVisible(true);
-        
+                
     }//GEN-LAST:event_btnTransferenciaActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed

@@ -232,7 +232,7 @@ public class Pagamento extends javax.swing.JFrame {
         
         UsuariosDAO dao = new UsuariosDAO();         
         
-        if(dao.checkSaldo(txtValor.getText(), txtNumConta.getText())){            
+        if(dao.checkSaldo(txtValor.getText(), txtNumConta.getText())){           
               
             dao.retiraSaldo(txtValor.getText(), txtNumConta.getText(), cboTipoConta.getSelectedItem().toString());
             new Home().setVisible(true);
@@ -258,8 +258,9 @@ public class Pagamento extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVerificaActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        new Home().setVisible(true);
+        
         this.dispose();
+        
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     /**
