@@ -21,8 +21,8 @@ public class UsuariosDAOTest {
     public void subtraiSaldo() {
         
         UsuariosDAO dao = new UsuariosDAO();
-        String valor = "2000";
-        String conta = "2200";
+        String valor = "10";
+        String conta = "111";
         String tipoConta = "Conta Corrente";
         
         if(dao.retiraSaldo(valor, conta, tipoConta)){
@@ -33,7 +33,7 @@ public class UsuariosDAOTest {
         
     }
     
-    //@Test
+    @Test
     public void checaSaldo() {
         
         UsuariosDAO dao = new UsuariosDAO();
@@ -47,7 +47,7 @@ public class UsuariosDAOTest {
         }        
         
     }
-    //@Test
+    @Test
     public void checaContas() {
         
         UsuariosDAO dao = new UsuariosDAO();
@@ -62,12 +62,12 @@ public class UsuariosDAOTest {
         
     }
     
-    //@Test
+    @Test
     public void adicionaSaldo() {
         
         UsuariosDAO dao = new UsuariosDAO();
         String valor = "100";
-        String conta = "111111";
+        String conta = "111";
         String tipoConta = "Conta Corrente";
         
         if(dao.addSaldo(valor, conta, tipoConta)){
