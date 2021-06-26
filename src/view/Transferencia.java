@@ -125,7 +125,7 @@ public class Transferencia extends javax.swing.JFrame {
 
         lblDep.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblDep.setForeground(new java.awt.Color(255, 255, 255));
-        lblDep.setText(" Depositar em: ");
+        lblDep.setText(" Transferir para: ");
 
         btnVoltar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnVoltar.setForeground(new java.awt.Color(255, 255, 255));
@@ -260,7 +260,7 @@ public class Transferencia extends javax.swing.JFrame {
             if(dao.checkNumConta(txtNumContaDestino.getText(), txtNumContaRem.getText())) { 
                 dao.retiraSaldo(txtValor.getText(), txtNumContaRem.getText(), "");
                 dao.addSaldo(txtValor.getText(), txtNumContaDestino.getText(), jcbConta.getSelectedItem().toString());
-                new Home().setVisible(true);
+                
                 this.dispose();
             
             } else {

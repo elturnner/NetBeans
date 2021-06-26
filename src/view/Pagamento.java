@@ -21,8 +21,7 @@ public class Pagamento extends javax.swing.JFrame {
      * Creates new form Pagamento
      */
     public Pagamento() {
-        initComponents();
-        txtValor.setEditable(false);
+        initComponents();        
         
         this.setLocationRelativeTo(null);
         
@@ -40,8 +39,7 @@ public class Pagamento extends javax.swing.JFrame {
         lblNumConta.setBackground(lbl);
         lblValor.setOpaque(true);
         lblValor.setBackground(lbl);
-        btnConfirmar.setBackground(lbl);       
-        btnVerifica.setBackground(lbl);
+        btnConfirmar.setBackground(lbl);     
         btnVoltar.setBackground(lblBotao);
     }
 
@@ -66,7 +64,6 @@ public class Pagamento extends javax.swing.JFrame {
         lblLogo = new javax.swing.JLabel();
         txtNumConta = new javax.swing.JTextField();
         lblNumConta = new javax.swing.JLabel();
-        btnVerifica = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -128,15 +125,6 @@ public class Pagamento extends javax.swing.JFrame {
         lblNumConta.setForeground(new java.awt.Color(255, 255, 255));
         lblNumConta.setText(" Nº da sua conta: ");
 
-        btnVerifica.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnVerifica.setText("Verificar código");
-        btnVerifica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnVerifica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVerificaActionPerformed(evt);
-            }
-        });
-
         btnVoltar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnVoltar.setForeground(new java.awt.Color(255, 255, 255));
         btnVoltar.setText("Voltar");
@@ -173,9 +161,7 @@ public class Pagamento extends javax.swing.JFrame {
                                     .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnVerifica)
-                                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(47, 47, 47)
                 .addComponent(btnVoltar)
                 .addContainerGap())
@@ -188,9 +174,7 @@ public class Pagamento extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnVerifica)
-                .addGap(29, 29, 29)
+                .addGap(70, 70, 70)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblValor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -234,28 +218,14 @@ public class Pagamento extends javax.swing.JFrame {
         
         if(dao.checkSaldo(txtValor.getText(), txtNumConta.getText())){           
               
-            dao.retiraSaldo(txtValor.getText(), txtNumConta.getText(), cboTipoConta.getSelectedItem().toString());
-            new Home().setVisible(true);
-            this.dispose();
-            
+            dao.retiraSaldo(txtValor.getText(), txtNumConta.getText(), cboTipoConta.getSelectedItem().toString());            
+            this.dispose();            
                         
         }else {
                 JOptionPane.showMessageDialog(null, "Saldo Insuficiente!");
             }
         
     }//GEN-LAST:event_btnConfirmarActionPerformed
-
-    private void btnVerificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificaActionPerformed
-        
-        if(txtCodigo.getText().equals("")){
-            JOptionPane.showMessageDialog(null, "Por favor, digite o código do boleto.");            
-        }else{
-            Random random = new Random();
-            int valor = random.nextInt(2000);
-            txtValor.setText(Integer.toString(valor)); 
-        }
-        
-    }//GEN-LAST:event_btnVerificaActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         
@@ -300,7 +270,6 @@ public class Pagamento extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConfirmar;
-    private javax.swing.JButton btnVerifica;
     private javax.swing.JButton btnVoltar;
     private javax.swing.JComboBox<String> cboTipoConta;
     private javax.swing.JPanel jPanel1;
