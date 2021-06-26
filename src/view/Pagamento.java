@@ -218,7 +218,9 @@ public class Pagamento extends javax.swing.JFrame {
         
         if(dao.checkSaldo(txtValor.getText(), txtNumConta.getText())){           
               
-            dao.retiraSaldo(txtValor.getText(), txtNumConta.getText(), cboTipoConta.getSelectedItem().toString());            
+            dao.retiraSaldo(txtValor.getText(), txtNumConta.getText(), cboTipoConta.getSelectedItem().toString()); 
+            
+            new FinalizacaoOperacao().setVisible(true);
             this.dispose();            
                         
         }else {

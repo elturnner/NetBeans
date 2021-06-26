@@ -261,7 +261,8 @@ public class Transferencia extends javax.swing.JFrame {
                 dao.retiraSaldo(txtValor.getText(), txtNumContaRem.getText(), "");
                 dao.addSaldo(txtValor.getText(), txtNumContaDestino.getText(), jcbConta.getSelectedItem().toString());
                 
-                this.dispose();
+                new FinalizacaoOperacao().setVisible(true);
+                this.dispose();                
             
             } else {
                 JOptionPane.showMessageDialog(null, "Verifique se os Dados foram digitados corretamente.");
