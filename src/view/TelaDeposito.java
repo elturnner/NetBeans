@@ -88,7 +88,6 @@ public class TelaDeposito extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("TELA DE DEPÓSITO");
-        setPreferredSize(new java.awt.Dimension(670, 420));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(197, 225, 236));

@@ -69,7 +69,7 @@ public class Pagamento extends javax.swing.JFrame {
         btnVerifica = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(197, 225, 236));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -94,7 +94,7 @@ public class Pagamento extends javax.swing.JFrame {
 
         lblValor.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblValor.setForeground(new java.awt.Color(255, 255, 255));
-        lblValor.setText(" Valor do documento: ");
+        lblValor.setText(" Valor do documento R$: ");
 
         txtValor.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 
@@ -217,7 +217,7 @@ public class Pagamento extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -251,7 +251,7 @@ public class Pagamento extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Por favor, digite o código do boleto.");            
         }else{
             Random random = new Random();
-            int valor = random.nextInt(1000);
+            int valor = random.nextInt(2000);
             txtValor.setText(Integer.toString(valor)); 
         }
         

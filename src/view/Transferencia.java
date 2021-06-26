@@ -65,7 +65,7 @@ public class Transferencia extends javax.swing.JFrame {
         lblLogo = new javax.swing.JLabel();
         jcbConta = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("AutoBank - Transferência");
 
         jPanel1.setBackground(new java.awt.Color(197, 225, 236));
@@ -177,9 +177,7 @@ public class Transferencia extends javax.swing.JFrame {
                                 .addComponent(btnConfirmar)
                                 .addGap(13, 13, 13))
                             .addComponent(lblDep)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addComponent(lblValor)))
+                            .addComponent(lblValor))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(107, 107, 107)
