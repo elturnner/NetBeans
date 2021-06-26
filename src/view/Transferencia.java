@@ -32,6 +32,8 @@ public class Transferencia extends javax.swing.JFrame {
         lblDep.setBackground(lbl);
         lblNContaDest.setOpaque(true);
         lblNContaDest.setBackground(lbl);
+        lblContaRem.setOpaque(true);
+        lblContaRem.setBackground(lbl);
         lblNconta.setOpaque(true);
         lblNconta.setBackground(lbl);
         lblValor.setOpaque(true);
@@ -51,34 +53,30 @@ public class Transferencia extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        lblNContaDest = new javax.swing.JLabel();
-        lblValor = new javax.swing.JLabel();
         btnConfirmar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
-        txtNumContaDestino = new javax.swing.JTextField();
-        txtValor = new javax.swing.JTextField();
-        lblNconta = new javax.swing.JLabel();
-        txtNumContaRem = new javax.swing.JTextField();
-        lblDep = new javax.swing.JLabel();
         btnVoltar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lblLogo = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        lblNconta = new javax.swing.JLabel();
+        txtNumContaRem = new javax.swing.JTextField();
+        jcbContaRem = new javax.swing.JComboBox<>();
+        lblContaRem = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        lblNContaDest = new javax.swing.JLabel();
+        txtNumContaDestino = new javax.swing.JTextField();
         jcbConta = new javax.swing.JComboBox<>();
+        lblDep = new javax.swing.JLabel();
+        lblValor = new javax.swing.JLabel();
+        txtValor = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("AutoBank - Transferência");
 
         jPanel1.setBackground(new java.awt.Color(197, 225, 236));
 
-        lblNContaDest.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        lblNContaDest.setForeground(new java.awt.Color(255, 255, 255));
-        lblNContaDest.setText(" Nº da Conta de Destino: ");
-
-        lblValor.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        lblValor.setForeground(new java.awt.Color(255, 255, 255));
-        lblValor.setText(" Valor: ");
-
-        btnConfirmar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnConfirmar.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         btnConfirmar.setForeground(new java.awt.Color(255, 255, 255));
         btnConfirmar.setText("Confirmar");
         btnConfirmar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -88,7 +86,7 @@ public class Transferencia extends javax.swing.JFrame {
             }
         });
 
-        btnCancelar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnCancelar.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
         btnCancelar.setText("Cancelar");
         btnCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -97,35 +95,6 @@ public class Transferencia extends javax.swing.JFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
-
-        txtNumContaDestino.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        txtNumContaDestino.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNumContaDestinoActionPerformed(evt);
-            }
-        });
-
-        txtValor.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        txtValor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtValorActionPerformed(evt);
-            }
-        });
-
-        lblNconta.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        lblNconta.setForeground(new java.awt.Color(255, 255, 255));
-        lblNconta.setText(" Nº da sua Conta: ");
-
-        txtNumContaRem.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        txtNumContaRem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNumContaRemActionPerformed(evt);
-            }
-        });
-
-        lblDep.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        lblDep.setForeground(new java.awt.Color(255, 255, 255));
-        lblDep.setText(" Transferir para: ");
 
         btnVoltar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnVoltar.setForeground(new java.awt.Color(255, 255, 255));
@@ -155,73 +124,173 @@ public class Transferencia extends javax.swing.JFrame {
             .addComponent(lblLogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jcbConta.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jPanel3.setBackground(new java.awt.Color(197, 225, 236));
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        lblNconta.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblNconta.setForeground(new java.awt.Color(255, 255, 255));
+        lblNconta.setText(" Nº da sua Conta: ");
+
+        txtNumContaRem.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtNumContaRem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumContaRemActionPerformed(evt);
+            }
+        });
+
+        jcbContaRem.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jcbContaRem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Conta Corrente", "Conta Poupança" }));
+
+        lblContaRem.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblContaRem.setForeground(new java.awt.Color(255, 255, 255));
+        lblContaRem.setText(" Retirar de: ");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNconta, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblContaRem, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jcbContaRem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNumContaRem, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtNumContaRem, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblNconta, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblContaRem, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcbContaRem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jPanel4.setBackground(new java.awt.Color(197, 225, 236));
+        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        lblNContaDest.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblNContaDest.setForeground(new java.awt.Color(255, 255, 255));
+        lblNContaDest.setText(" Nº da Conta de Destino: ");
+
+        txtNumContaDestino.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtNumContaDestino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumContaDestinoActionPerformed(evt);
+            }
+        });
+
+        jcbConta.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jcbConta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Conta Corrente", "Conta Poupança" }));
+
+        lblDep.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblDep.setForeground(new java.awt.Color(255, 255, 255));
+        lblDep.setText(" Transferir para: ");
+
+        lblValor.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblValor.setForeground(new java.awt.Color(255, 255, 255));
+        lblValor.setText(" Valor: ");
+
+        txtValor.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtValor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtValorActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addGap(83, 83, 83)
+                                .addComponent(lblDep))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblNContaDest)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jcbConta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumContaDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblValor)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNContaDest, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNumContaDestino, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblDep, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcbConta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblValor, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnVoltar)
-                .addGap(24, 24, 24))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblNContaDest)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnConfirmar)
-                                .addGap(13, 13, 13))
-                            .addComponent(lblDep)
-                            .addComponent(lblValor))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(107, 107, 107)
-                                .addComponent(btnCancelar))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jcbConta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtNumContaDestino)
-                                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblNconta)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtNumContaRem, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addGap(227, 227, 227)
+                .addComponent(btnConfirmar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addComponent(btnCancelar)
+                .addGap(53, 53, 53)
+                .addComponent(btnVoltar)
+                .addGap(34, 34, 34))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(72, 72, 72))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNumContaRem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNconta, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNumContaDestino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNContaDest, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDep, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jcbConta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblValor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnConfirmar)
-                    .addComponent(btnCancelar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnVoltar)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnVoltar)
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnConfirmar)
+                            .addComponent(btnCancelar))
+                        .addContainerGap(28, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -258,7 +327,7 @@ public class Transferencia extends javax.swing.JFrame {
         if(dao.checkSaldo(txtValor.getText(), txtNumContaRem.getText())){
             
             if(dao.checkNumConta(txtNumContaDestino.getText(), txtNumContaRem.getText())) { 
-                dao.retiraSaldo(txtValor.getText(), txtNumContaRem.getText(), "");
+                dao.retiraSaldo(txtValor.getText(), txtNumContaRem.getText(), jcbContaRem.getSelectedItem().toString());
                 dao.addSaldo(txtValor.getText(), txtNumContaDestino.getText(), jcbConta.getSelectedItem().toString());
                 
                 new FinalizacaoOperacao().setVisible(true);
@@ -333,7 +402,11 @@ public class Transferencia extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JComboBox<String> jcbConta;
+    private javax.swing.JComboBox<String> jcbContaRem;
+    private javax.swing.JLabel lblContaRem;
     private javax.swing.JLabel lblDep;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblNContaDest;
