@@ -48,7 +48,7 @@ public class TelaDeposito extends javax.swing.JFrame {
 
             if (rs != null && rs.next()) {
                 saldo = rs.getDouble(aux);
-                //System.out.println("pegou saldo "+ saldo);
+                
             }
 
             saldoAtualizado = saldo + Double.parseDouble(valor);
