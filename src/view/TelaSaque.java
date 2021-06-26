@@ -93,6 +93,8 @@ public class TelaSaque extends javax.swing.JFrame {
         setTitle("TELA DE SAQUE");
         setResizable(false);
 
+        jPanel1.setBackground(new java.awt.Color(197, 225, 236));
+
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Confirmar");
