@@ -183,6 +183,9 @@ public class Login extends javax.swing.JFrame {
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Senha ou Usuário inválidos!");
+            //As linha abaixo "Limpam" os campos em caso de falha no login
+            txtUsername.setText(null);
+            txtSenha.setText(null);
         }
         
     }//GEN-LAST:event_btnLoginActionPerformed
