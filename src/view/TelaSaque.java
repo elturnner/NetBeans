@@ -50,7 +50,7 @@ public class TelaSaque extends javax.swing.JFrame {
 
             if (rs != null && rs.next()) {
                 saldo = rs.getDouble(aux);
-                System.out.println("pegou saldo"+ saldo);
+                //System.out.println("pegou saldo"+ saldo);
             }
 
             saldoAtualizado = saldo - Double.parseDouble(valor);
@@ -64,6 +64,9 @@ public class TelaSaque extends javax.swing.JFrame {
             stmt.setString(2, conta);
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Operação Realizada com sucesso!");
+            //As linha abaixo "Limpam" os campos após a operação
+            txtValorSaque.setText(null);
+            txtNumCont.setText(null);
             return true;
 
         } catch (SQLException ex) {

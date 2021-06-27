@@ -16,7 +16,7 @@ public class ConsulSaldo extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         con = ConnectionFactory.getConnection();
-        
+
         lblLogo.setHorizontalAlignment(SwingConstants.CENTER);
         Color lbl = new Color(36, 135, 174);
         lblCli.setOpaque(true);
@@ -29,8 +29,8 @@ public class ConsulSaldo extends javax.swing.JFrame {
         lblSaldoC.setBackground(lbl);
         lblSaldoP.setOpaque(true);
         lblSaldoP.setBackground(lbl);
-        
-        Color lblBotao = new Color(9, 24, 31);        
+
+        Color lblBotao = new Color(9, 24, 31);
         jButton1.setBackground(lbl);
     }
 
@@ -48,6 +48,12 @@ public class ConsulSaldo extends javax.swing.JFrame {
 
             } else {
                 JOptionPane.showMessageDialog(null, "Cliente nao cadastrado ou dados incorretos!");
+                //As linhas abaixo "limpam" os campos após a consulta.
+                txtIdCliente.setText(null);
+                txtNumCont.setText(null);
+                txtCliente.setText(null);
+                txtSaldoPoup.setText(null);
+                txtSaldoCc.setText(null);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -218,6 +224,15 @@ public class ConsulSaldo extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //Chamada ao CONSULTA SALDO
         consultarSaldo();
+        JOptionPane.showMessageDialog(null, "Operação realizada com sucesso!");
+        
+        //As linhas abaixo "limpam" os campos após a consulta.
+        txtIdCliente.setText(null);
+        txtNumCont.setText(null);
+        txtCliente.setText(null);
+        txtSaldoPoup.setText(null);
+        txtSaldoCc.setText(null);
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -251,8 +266,7 @@ public class ConsulSaldo extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ConsulSaldo().setVisible(true);
-                
-                
+
             }
         });
     }

@@ -62,6 +62,9 @@ public class TelaDeposito extends javax.swing.JFrame {
             stmt.setString(2, conta);
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Operação Realizada com sucesso!");
+            //As linha abaixo "Limpam" os campos após a operação
+            txtValorDeposito.setText(null);
+            txtNumCont.setText(null);
             return true;
 
         } catch (SQLException ex) {
