@@ -224,7 +224,7 @@ public class ConsulSaldo extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //Chamada ao CONSULTA SALDO
         consultarSaldo();
-        JOptionPane.showMessageDialog(null, "Operação realizada com sucesso!");
+        /*JOptionPane.showMessageDialog(null, "Operação realizada com sucesso!");
         
         //As linhas abaixo "limpam" os campos após a consulta.
         txtIdCliente.setText(null);
@@ -232,7 +232,7 @@ public class ConsulSaldo extends javax.swing.JFrame {
         txtCliente.setText(null);
         txtSaldoPoup.setText(null);
         txtSaldoCc.setText(null);
-
+*/
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

@@ -63,7 +63,8 @@ public class TelaSaque extends javax.swing.JFrame {
             stmt.setString(1, String.valueOf(saldoAtualizado));
             stmt.setString(2, conta);
             stmt.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Operação Realizada com sucesso!");
+            //JOptionPane.showMessageDialog(null, "Operação Realizada com sucesso!");
+            new FinalizacaoOperacao().setVisible(true);
             //As linha abaixo "Limpam" os campos após a operação
             txtValorSaque.setText(null);
             txtNumCont.setText(null);

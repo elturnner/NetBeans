@@ -61,7 +61,8 @@ public class TelaDeposito extends javax.swing.JFrame {
             stmt.setString(1, String.valueOf(saldoAtualizado));
             stmt.setString(2, conta);
             stmt.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Operação Realizada com sucesso!");
+            //JOptionPane.showMessageDialog(null, "Operação Realizada com sucesso!");
+            new FinalizacaoOperacao().setVisible(true);
             //As linha abaixo "Limpam" os campos após a operação
             txtValorDeposito.setText(null);
             txtNumCont.setText(null);
