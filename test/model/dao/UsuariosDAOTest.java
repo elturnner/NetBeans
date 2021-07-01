@@ -16,12 +16,27 @@ public class UsuariosDAOTest {
     
     public UsuariosDAOTest() {
     }
+    
+    @Test
+    public void checaLogin() {
+        
+        UsuariosDAO dao = new UsuariosDAO();
+        String user = "user01";
+        String senha = "111";
+        
+        if(dao.checkLogin(user, senha)){
+            System.out.println("Logado com sucesso!");
+        }else{
+            fail("Usuário ou senha incorretos!");
+        }        
+        
+    }
 
     @Test
     public void subtraiSaldo() {
         
         UsuariosDAO dao = new UsuariosDAO();
-        String valor = "10";
+        String valor = "100";
         String conta = "111";
         String tipoConta = "Conta Corrente";
         
@@ -37,10 +52,11 @@ public class UsuariosDAOTest {
     public void checaSaldo() {
         
         UsuariosDAO dao = new UsuariosDAO();
-        String valor = "5000";
-        String conta = "555555";
+        String valor = "1000";
+        String conta = "111";
+        String tipoConta = "Conta Corrente";
         
-        if(dao.checkSaldo(valor, conta)){
+        if(dao.checkSaldo(valor, conta, tipoConta)){
             System.out.println("Você tem saldo Suficiente!");
         }else{
             System.out.println("Você não possui Saldo Suficiente!");
@@ -51,13 +67,13 @@ public class UsuariosDAOTest {
     public void checaContas() {
         
         UsuariosDAO dao = new UsuariosDAO();
-        String contaDest = "999999";
-        String contaRem = "555555";
+        String contaDest = "222";
+        String contaRem = "111";
         
         if(dao.checkNumConta(contaDest, contaRem)){
             System.out.println("As duas Contas Existem!");
         }else{
-            System.out.println("Uma das contas n existem!");
+            System.out.println("Uma das contas não existem!");
         }        
         
     }
