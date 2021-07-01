@@ -6,7 +6,6 @@
 package view;
 
 import java.awt.Color;
-import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import model.dao.UsuariosDAO;
@@ -217,7 +216,7 @@ public class Pagamento extends javax.swing.JFrame {
         
         UsuariosDAO dao = new UsuariosDAO();         
         
-        if(dao.checkSaldo(txtValor.getText(), txtNumConta.getText())){           
+        if(dao.checkSaldo(txtValor.getText(), txtNumConta.getText(),cboTipoConta.getSelectedItem().toString())){           
               
             dao.retiraSaldo(txtValor.getText(), txtNumConta.getText(), cboTipoConta.getSelectedItem().toString()); 
             
