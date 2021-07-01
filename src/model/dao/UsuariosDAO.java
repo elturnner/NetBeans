@@ -190,13 +190,18 @@ public class UsuariosDAO {
     }
         
         
-        public boolean checkSaldo(String valor, String conta){
+        public boolean checkSaldo(String valor, String conta, String tipoConta){
         
         Connection con = ConnectionFactory.getConnection();
         ResultSet rs = null;
         String sql2 = "SELECT * FROM usuarios WHERE numconta = ?";
+        String aux = "saldoPoup";
         double saldo = 0;
         PreparedStatement stmt = null;
+        
+        if(tipoConta.equals("Conta Corrente")){            
+            aux = "saldoCor";
+        }
 
         try {
             stmt = con.prepareStatement(sql2);
@@ -204,7 +209,7 @@ public class UsuariosDAO {
             rs = stmt.executeQuery();
             
             if(rs != null && rs.next()){
-                saldo = rs.getDouble("saldoPoup");
+                saldo = rs.getDouble(aux);
             }
             if(saldo < Double.parseDouble(valor)){
                 return false;
