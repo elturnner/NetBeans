@@ -52,9 +52,9 @@ public class UsuariosDAOTest {
     public void checaSaldo() {
         
         UsuariosDAO dao = new UsuariosDAO();
-        String valor = "1000";
+        String valor = "2000";
         String conta = "111";
-        String tipoConta = "Conta Corrente";
+        String tipoConta = "Conta Poupança";
         
         if(dao.checkSaldo(valor, conta, tipoConta)){
             System.out.println("Você tem saldo Suficiente!");
@@ -67,7 +67,7 @@ public class UsuariosDAOTest {
     public void checaContas() {
         
         UsuariosDAO dao = new UsuariosDAO();
-        String contaDest = "222";
+        String contaDest = "223";
         String contaRem = "111";
         
         if(dao.checkNumConta(contaDest, contaRem)){
@@ -82,7 +82,7 @@ public class UsuariosDAOTest {
     public void adicionaSaldo() {
         
         UsuariosDAO dao = new UsuariosDAO();
-        String valor = "100";
+        String valor = "300";
         String conta = "111";
         String tipoConta = "Conta Corrente";
         

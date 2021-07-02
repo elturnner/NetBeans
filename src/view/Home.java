@@ -46,6 +46,7 @@ public class Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("AutoBank - Serviços");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(197, 225, 236));
 
